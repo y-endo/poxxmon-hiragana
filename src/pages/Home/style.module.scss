@@ -1,0 +1,36 @@
+@use '@/styles/variables.scss' as var;
+
+.container {
+  height: 100dvh;
+}
+
+.title {
+  text-align: center;
+  filter: drop-shadow(0 0 1px #fff);
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 4.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 16px #fff, 0 0 14px #fff, 0 0 12px #fff, 0 0 10px #fff,
+    0 0 8px #fff, 0 0 4px #fff;
+  filter: drop-shadow(0 0 1px #fff);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  padding: 10px 0 13px;
+  margin: 70px auto 0;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  background-color: var.$red;
+  filter: drop-shadow(0 0 1px #fff);
+  border-radius: 40px;
+}

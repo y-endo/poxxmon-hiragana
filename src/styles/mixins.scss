@@ -1,0 +1,7 @@
+@use './variables.scss' as var;
+
+@mixin sp {
+  @media screen and (width <= 767px) {
+    @content;
+  }
+}

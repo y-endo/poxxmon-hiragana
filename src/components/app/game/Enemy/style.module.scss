@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use '@/styles/variables.scss' as var;
+@use '@/styles/mixins.scss' as *;
+
+.root {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  > img {
+    filter: grayscale(1);
+
+    @include sp {
+      padding: 0 30px;
+    }
+  }
+
+  &.show {
+    > img {
+      animation: show 0.5s forwards;
+    }
+  }
+
+  &.hide {
+    > img {
+      animation: hide 0.5s forwards;
+    }
+  }
+
+  &.win {
+    > img {
+      animation: coloring 0.7s map.get(var.$easing, 'ease-in-out-cubic')
+          forwards,
+        happy 0.25s forwards 0.7s 2;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes coloring {
+  0% {
+    filter: grayscale(1);
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    filter: grayscale(0);
+  }
+}
+
+@keyframes happy {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

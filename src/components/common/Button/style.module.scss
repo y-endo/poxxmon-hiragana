@@ -1,0 +1,17 @@
+@use '@/styles/mixins.scss' as *;
+
+.button {
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 30px;
+
+  @include sp {
+    padding: 7px 12px;
+    font-size: 1.6rem;
+  }
+}

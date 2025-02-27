@@ -1,0 +1,7 @@
+{
+  "stylelint.validate": ["css", "scss", "ts", "tsx"],
+  "stylelint.stylelintPath": "node_modules/stylelint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  }
+}

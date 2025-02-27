@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '@/styles/variables.scss' as var;
+@use '@/styles/mixins.scss' as *;
+
+.root {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 40px 10px 45px;
+  background-color: rgba(#fff, 0.7);
+  border-radius: 6px;
+
+  @include sp {
+    gap: 0;
+    padding: 0;
+    margin: 20px 10px 25px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+
+  @include sp {
+    gap: 0;
+  }
+}
+
+.cell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  animation: light-up 1s map.get(var.$easing, 'ease-in-out-sine') infinite;
+
+  @include sp {
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0;
+  }
+
+  &:disabled {
+    z-index: 0;
+    font-weight: 500;
+    color: #b0b0b0;
+    background-color: #f5f5f5;
+    animation: none;
+  }
+}
+
+@keyframes light-up {
+  0% {
+    box-shadow: 0 0 0 0 rgba(#ff8b11, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 10px 5px rgba(#ff8b11, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(#ff8b11, 0);
+  }
+}
