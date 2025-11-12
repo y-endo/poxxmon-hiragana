@@ -1,4 +1,3 @@
-# ポ○モンの画像や音楽を使ったひらがな学習ゲーム
-https://yukiendo.jp/pokemon/  
-(pokemon/pokemon)  
+# 国民的RPGキャラクターでひらがなを学習するゲーム
 React + TypeScript + Vite  
+`npm run build` でビルドしたファイルで遊んでください。  
